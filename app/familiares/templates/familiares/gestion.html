@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block sidebar %}
+
+{% include "familiares/navbar.html" %}
+
+{% endblock %}
+
+{% block content %}
+<div class="flex justify-between items-center mb-4">
+    <h2 class="text-2xl font-bold">Gestión de Familiares</h2>
+
+</div>
+
+<div class="overflow-x-auto">
+    <table class="min-w-full bg-white border">
+        <thead class="bg-gray-200">
+            <tr>
+                <th class="py-2 px-4 border">Código familiar</th>
+                <th class="py-2 px-4 border">Nombre</th>
+                <th class="py-2 px-4 border">Apellido paterno</th>
+                <th class="py-2 px-4 border">Apellido materno</th>
+                <th class="py-2 px-4 border">Parentesco</th>
+                <th class="py-2 px-4 border">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for f in familiar %}
+            <tr class="hover:bg-gray-100">
+                <td class="py-2 px-4 border">{{ f.codFamiliar }}</td>
+                <td class="py-2 px-4 border">{{ f.nombre }}</td>
+                <td class="py-2 px-4 border">{{ f.apellido_paterno }}</td>
+                <td class="py-2 px-4 border">{{ f.apellido_materno }}</td>
+                <td class="py-2 px-4 border">{{ f.parentesco }}</td>
+                
+                    <td class="py-2 px-4 border">
+                    <a href="{% url 'familiares:editar' f.pk %}" class="bg-blue-600 text-white px-2 py-1 rounded text-sm hover:bg-blue-700">Editar</a>
+                    <a href="{% url 'familiares:eliminar' f.pk %}" class="bg-red-600 text-white px-2 py-1 rounded text-sm hover:bg-red-700">Eliminar</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" class="py-2 px-4 text-center">No hay familiares registrados.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

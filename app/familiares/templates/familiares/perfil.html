@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block sidebar %}
+
+{% include "familiares/navbar.html" %}
+
+{% endblock %}
+
+{% block content %}
+<!-- TITULO -->
+    <h1 class="text-3xl font-bold text-gray-800 mb-8">
+      Perfil Familiar
+    </h1>
+
+
+    <!-- CARD -->
+    <div class="bg-white shadow-lg rounded-xl p-8 max-w-4xl mx-auto mt-2">
+
+      <!-- GRID -->
+      <div class="grid grid-cols-2 gap-6">
+
+        <!-- CODIGO -->
+        <div>
+          <label class="text-gray-500 text-sm">Codigo de Usuario</label>
+          <div class="bg-gray-100 p-3 rounded-lg mt-1">
+            {{ familiar.codFamiliar }}
+          </div>
+        </div>
+
+
+        <!-- NOMBRE -->
+        <div>
+          <label class="text-gray-500 text-sm">Nombre</label>
+          <div class="bg-gray-100 p-3 rounded-lg mt-1">
+            {{ familiar.nombre }}
+          </div>
+        </div>
+
+        <!-- APELLIDO -->
+        <div>
+          <label class="text-gray-500 text-sm">Apellido Paterno</label>
+          <div class="bg-gray-100 p-3 rounded-lg mt-1">
+            {{ familiar.apellido_paterno }}
+          </div>
+          <label class="text-gray-500 text-sm">Apellido Materno</label>
+          <div class="bg-gray-100 p-3 rounded-lg mt-1">
+            {{ familiar.apellido_materno }}
+          </div>
+        </div>
+
+        <!-- CARRERA -->
+        <div>
+          <label class="text-gray-500 text-sm">Parentesco</label>
+          <div class="bg-gray-100 p-3 rounded-lg mt-1">
+            {{ familiar.parentesco }}
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+{% endblock %}
