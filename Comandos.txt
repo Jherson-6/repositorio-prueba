@@ -1,0 +1,8 @@
+1.Instalar las librerias de python 
+    pip install -r requirements
+2. Crear la base de datos vacia en mysql
+    mysql -u root -p -e "CREATE DATABASE db_familia;"
+3. Importar tablas y datos 
+    mysql -u root -p db_familia < dump-db_familia-202605211902.sql
+4. Inicializar servidor
+    python manage.py runserver
