@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'app.familiares',
     'app.usuario',
     'app.administradores',
+    
+    'app.clientes'
     'app.login',
 ]
 
