@@ -1,1 +1,0 @@
-from usuario.models import Usuario
